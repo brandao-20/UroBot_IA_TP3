@@ -15,22 +15,10 @@ Clavien-Dindo IIIb,0.9,3.6,2.5
 Clavien-Dindo IVa,0.6,0.8,2.1
 Clavien-Dindo V,< 0.1,0.2,0.2
 Grade,Definition,,
-I,"Any deviation from the normal post-operative course not requiring surgical, endoscopic or 
-radiological intervention. This includes the need for certain drugs (e.g., antiemetics, antipyretics, 
-analgesics, diuretics and electrolytes), treatment with physiotherapy and wound infections that are 
-opened at the bedside",,
-II,"Complications requiring drug treatments other than those allowed for Grade I complications; this 
-includes blood transfusion and total parenteral nutrition (TPN)",,
-IIIa,"Complications requiring surgical, endoscopic or radiological intervention
-- intervention not under general anaesthetic",,
-IIIb,"Complications requiring surgical, endoscopic or radiological intervention
-- intervention under general anaesthetic",,
-IVa,"Life-threatening complications; this includes CNS complications (e.g., brain haemorrhage, 
-ischaemic stroke, subarachnoid haemorrhage) which require intensive care, but excludes transient 
-ischaemic attacks (TIAs)
-- single-organ dysfunction (including dialysis)",,
-IVb,"Life-threatening complications; this includes CNS complications (e.g., brain haemorrhage, 
-ischaemic stroke, subarachnoid haemorrhage) which require intensive care, but excludes transient 
-ischaemic attacks (TIAs)
-- multi-organ dysfunction",,
+I,"Any deviation from the normal post-operative course not requiring surgical, endoscopic or   radiological intervention. This includes the need for certain drugs (e.g., antiemetics, antipyretics,   analgesics, diuretics and electrolytes), treatment with physiotherapy and wound infections that are   opened at the bedside",,
+II,Complications requiring drug treatments other than those allowed for Grade I complications; this   includes blood transfusion and total parenteral nutrition (TPN),,
+IIIa,"Complications requiring surgical, endoscopic or radiological intervention  - intervention not under general anaesthetic",,
+IIIb,"Complications requiring surgical, endoscopic or radiological intervention  - intervention under general anaesthetic",,
+IVa,"Life-threatening complications; this includes CNS complications (e.g., brain haemorrhage,   ischaemic stroke, subarachnoid haemorrhage) which require intensive care, but excludes transient   ischaemic attacks (TIAs)  - single-organ dysfunction (including dialysis)",,
+IVb,"Life-threatening complications; this includes CNS complications (e.g., brain haemorrhage,   ischaemic stroke, subarachnoid haemorrhage) which require intensive care, but excludes transient   ischaemic attacks (TIAs)  - multi-organ dysfunction",,
 V,Death of the patient,,

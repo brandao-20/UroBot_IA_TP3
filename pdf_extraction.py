@@ -1,6 +1,6 @@
 import camelot
 import re
-import fitz
+import pymupdf
 
 import pandas as pd
 
@@ -61,7 +61,7 @@ def extract_text_with_page_numbers(pdf_path, config):
     current_page = 1  # Start from the first page
 
     for page_layout in extract_pages(pdf_path):
-        if page_layout.pageid in pages or pages is None:
+        if pages is None or page_layout.pageid in pages:
             for element in page_layout:
                 if isinstance(element, LTTextContainer):
                     text = element.get_text()
@@ -297,7 +297,7 @@ def find_nearest_caption(page, table_top, last_caption):
 
 
 def extract_and_filter_tables_with_captions(pdf_path, tables, headings=["Summary of evidence", "Recommendations"]):
-    doc = fitz.open(pdf_path)
+    doc = pymupdf.open(pdf_path)
     filtered_tables_with_captions = []
     last_caption = None  # Initialize last_caption as None
 

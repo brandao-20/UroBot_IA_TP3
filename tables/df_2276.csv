@@ -1,10 +1,6 @@
 0,1,2,3,4,5
 Table 5.5: Adverse events of three groups of targeted biopsy [324]*,,,,,
-,"Overall  
-(n = 234)","Transrectal  
-MRI-TB (n = 77)","Transperineal  
-FUS-TB (n = 79)","Transrectal  
-COG-TB (n = 78)",p value
+,Overall    (n = 234),Transrectal    MRI-TB (n = 77),Transperineal    FUS-TB (n = 79),Transrectal    COG-TB (n = 78),p value
 Clavien-Dindo grade,,,,,< 0.001
 No adverse events,30.3 (71),47.4 (36),29.1 (23),15.4 (12),
 Grade 1,63.2 (148),50.0 (38),65.8 (52),74.4 (58),
@@ -25,7 +21,6 @@ Active inflammation,,,,,
 Granulomatous inflammation,,,,,
 High-grade prostatic intraepithelial neoplasia (PIN),,,,,
 "High-grade PIN with atypical glands, suspicious for adenocarcinoma",,,,,
-"Focus of atypical glands/lesion suspicious for adenocarcinoma/atypical small acinar proliferation, suspicious 
-for cancer",,,,,
+"Focus of atypical glands/lesion suspicious for adenocarcinoma/atypical small acinar proliferation, suspicious   for cancer",,,,,
 "Adenocarcinoma, provide type and subtype, and presence or absence of cribriform pattern",,,,,
 Intraductal carcinoma,,,,,

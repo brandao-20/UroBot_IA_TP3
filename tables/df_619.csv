@@ -1,7 +1,6 @@
 0,1,2,3,4
 Table 5: Patient questionnaires,,,,
-Questionnaire,"Underlying neurological 
-disorder",Bladder,Bowel,Sexual function
+Questionnaire,Underlying neurological   disorder,Bladder,Bowel,Sexual function
 FAMS [79],MS,X,,X
 FILMS [80],MS,X,X,
 HAQUAMS [81],MS,X,X,X
