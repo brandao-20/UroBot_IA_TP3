@@ -1,70 +1,73 @@
 <!DOCTYPE html>
 <html lang="pt-pt">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ESTG RegPedagogicoBot</title>
-<link rel="stylesheet" href="static/style.css">
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const textareas = document.querySelectorAll('.text-display, textarea[name=query]');
-    textareas.forEach(textarea => {
-      textarea.style.height = "";
-      textarea.style.height = textarea.scrollHeight + "px";
-    });
-    function autoAdjustHeight(event) {
-      event.target.style.height = "";
-      event.target.style.height = event.target.scrollHeight + "px";
-    }
-    textareas.forEach(textarea => {
-      textarea.addEventListener('input', autoAdjustHeight);
-    });
-  });
-</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ESTG RegPedagogicoBot</title>
+  <link rel="stylesheet" href="static/style.css" />
 </head>
 
 <body>
-<div class="container">
-<header>
-    <img src="static/ESTG_logo.png" alt="ESTG Logo" id="logo">
-    <div>
+  <div class="app-container">
+    <header class="app-header">
+      <img src="static/ESTG_logo.png" alt="Logo ESTG" class="logo-main" />
+      <div class="header-text">
         <h1>ESTG RegPedagogicoBot</h1>
         <p>Assistente para o Regulamento Pedagógico da ESTG</p>
-    </div>
-</header>
+      </div>
+    </header>
 
-<main>
-    <form method="post" class="prompt-form">
-      <textarea name="query" placeholder="Coloca a tua questão..." required rows="1" cols="100" oninput="this.style.height = ''; this.style.height = this.scrollHeight + 'px'"></textarea>
-      <input type="submit" value="Perguntar">
-    </form>
-
-    <div class="predefined-questions">
-      <h2>Perguntas Rápidas</h2>
-      <form action="/" method="post">
-        <button type="submit" name="query" value="Como posso justificar as faltas?">Como posso justificar as faltas?</button>
-        <button type="submit" name="query" value="O que é a avaliação contínua?">O que é a avaliação contínua?</button>
+    <main class="app-main">
+      <form method="post" class="form-query">
+        <textarea
+          name="query"
+          placeholder="Coloca aqui a tua questão…"
+          required
+          class="input-query"
+        ></textarea>
+        <button type="submit" class="btn-submit">Perguntar</button>
       </form>
-    </div>
 
-    <div class="response-group" {% if query %} style="display: block;" {% endif %}>
-      <textarea class="text-display" readonly>{{ 'Tu: \n' + query if query else 'Tu perguntaste: ' }}</textarea>
-      <textarea class="text-display" readonly>{{ 'Bot: \n' + answer if answer else 'Resposta: ' }}</textarea>
-    </div>
+      <section class="quick-questions">
+        <h2>Perguntas Rápidas</h2>
+        <form action="/" method="post" class="quick-buttons">
+          <button type="submit" name="query" value="Como posso justificar as faltas?" class="btn-quick">
+            Justificar faltas
+          </button>
+          <button type="submit" name="query" value="O que é a avaliação contínua?" class="btn-quick">
+            Avaliação contínua
+          </button>
+          <button type="submit" name="query" value="Qual o prazo para recorrer de nota?" class="btn-quick">
+            Prazo para recurso
+          </button>
+        </form>
+      </section>
 
-    {% if documents %}
-    <div>
+      {% if query %}
+      <section class="response-section">
+        <div class="response-box user-box">
+          <strong>Tu:</strong>
+          <p>{{ query }}</p>
+        </div>
+        <div class="response-box bot-box">
+          <strong>Bot:</strong>
+          <p>{{ answer }}</p>
+        </div>
+      </section>
+      {% endif %}
+
+      {% if documents %}
+      <section class="docs-section">
         {% for doc in documents %}
-            <div class="doc-container">{{ doc|safe }}</div>
+          <div class="doc-card">{{ doc|safe }}</div>
         {% endfor %}
-    </div>
-    {% endif %}
-</main>
+      </section>
+      {% endif %}
+    </main>
 
-<footer>
-    <p>© ESTG RegulamentoPedagogicoBot 2025</p>
-</footer>
-</div>
-
+    <footer class="app-footer">
+      <p>© ESTG RegPedagogicoBot 2025</p>
+    </footer>
+  </div>
 </body>
 </html>

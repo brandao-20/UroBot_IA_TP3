@@ -1,154 +1,170 @@
-body {
-  font-family: Arial, sans-serif;
+/* Main stylesheet for ESTG RegPedagogicoBot */
+
+/* Reset and box sizing */
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  width: 100%;
-  background-color: white;
+}
+
+/* Page background and font */
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #E3F2FD; /* very light blue */
   display: flex;
-  min-height: 100vh;
-  align-items: center;
   justify-content: center;
+  padding: 20px;
 }
 
-.container {
-  background-color: white;
-  padding: 40px;
-  width: 40%;
+/* Outer container */
+.app-container {
+  width: 100%;
+  max-width: 800px;
+  background: #FFFDE7; /* pale yellow */
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  overflow: hidden;
 }
 
-header {
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    padding: 10px;
-    background-color: #f0f0f0;
+/* Header styling */
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background: #FFF59D; /* highlighted pastel yellow */
 }
 
-#logo {
-    height: 120px; /* Adjust based on your logo's dimensions */
-    margin-right: 20px;
+.logo-main {
+  height: 60px;
 }
 
-header div {
-    display: flex;
-    flex-direction: column;
+.header-text h1 {
+  font-size: 1.8rem;
+  color: #000000; /* black title */
 }
 
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  color: #333;
+.header-text p {
+  font-size: 0.9rem;
+  color: #333333;
 }
 
-p {
-  color: #999;
-  font-size: 14px;
-}
-
-main {
+/* Main content area */
+.app-main {
+  padding: 24px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 28px;
 }
 
-.prompt-form {
+/* Query form */
+.form-query {
   display: flex;
-  gap: 10px;
+  gap: 12px;
 }
 
-textarea[name="query"] {
-  resize: none;
-  width: auto;
-  min-height: 50px;
-  overflow: auto;
-  box-sizing: border-box;
-}
-
-.prompt-form input[type="text"],
-.prompt-form input[type="submit"] {
-  padding: 12px 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-}
-
-.prompt-form input[type="text"] {
+.input-query {
   flex: 1;
+  padding: 14px;
+  border: 2px solid #FFD54F; /* bold yellow border */
+  border-radius: 12px;
+  font-size: 1rem;
+  resize: none;
+  background: white;
 }
 
-.prompt-form input[type="submit"] {
-  background-color: #0056b3;
-  color: white;
+.btn-submit {
+  background: #FFD54F; /* same bold yellow */
+  border: none;
+  color: #000000;
+  padding: 0 24px;
+  border-radius: 12px;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background 0.2s ease;
+}
+.btn-submit:hover {
+  background: #FFC107; /* darker hover */
 }
 
-.prompt-form input[type="submit"]:hover {
-  background-color: #004494;
+/* Quick questions section */
+.quick-questions h2 {
+  margin-bottom: 12px;
+  color: #333333;
 }
-
-.predefined-questions form {
+.quick-buttons {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  justify-content: center;
 }
-
-.predefined-questions button {
-  padding: 10px 20px;
-  background-color: #f0f4f9;
-  color: black;
-  border: none;
-  border-radius: 5px;
+.btn-quick {
+  background: #FFFDE7; /* pale yellow */
+  border: 2px solid #FFD54F;
+  color: #000000;
+  padding: 8px 16px;
+  border-radius: 24px;
   cursor: pointer;
-  font-size: 16px;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-quick:hover {
+  background: #FFD54F;
+  color: #000000;
 }
 
-.predefined-questions button:hover {
-  background-color: #a0a4a9;
+/* Response boxes */
+.response-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.response-box {
+  padding: 16px;
+  border-radius: 12px;
+  line-height: 1.5;
+}
+.user-box {
+  background: white;
+  border: 1px solid #FFD54F;
+}
+.bot-box {
+  background: #FFF9C4; /* light yellow */
+  border: 1px solid #FFD54F;
 }
 
-.response-group {
-  display: none;
-  padding: 20px;
-  margin-top: 20px;
+/* Document cards: allow horizontal scrolling for wide tables */
+.docs-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.doc-card {
+  background: white;
+  border: 1px solid #DDD;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  overflow-x: auto; /* enable scroll if content too wide */
 }
 
-.response-group.active {
-  display: block;
+/* Inside document cards: make sure tables wrap/break correctly */
+.doc-card table {
+  width: 100%;           /* stretch to container width */
+  border-collapse: collapse;
+  table-layout: auto;    /* allow flexible column widths */
+}
+.doc-card th,
+.doc-card td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+  word-wrap: break-word; /* break long words */
+  white-space: normal;   /* allow line wrapping */
 }
 
-.text-display {
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  background-color: #f9f9f9;
-  color: #333;
-  resize: none;
-  width: 100%;
-}
-.doc-container {
-    border: 1px solid #ddd; /* Border around each document */
-    padding: 10px;          /* Padding inside each document box */
-    margin: 10px 0;         /* Margin between document boxes */
-    background-color: #f9f9f9; /* Light gray background for distinction */
-    border-radius: 5px;     /* Rounded corners for a smoother look */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-}
-th, td {
-    border: 1px solid #ccc;
-    padding: 8px;
-    text-align: left;
-}
-footer {
+/* Footer */
+.app-footer {
   text-align: center;
-  margin-top: 40px;
-
-
+  padding: 16px;
+  font-size: 0.8rem;
+  color: #555555;
 }
